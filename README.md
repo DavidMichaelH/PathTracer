@@ -225,11 +225,12 @@ The default scene (`main.cpp:11-69`) renders:
 
 ![High-Resolution Dispersion](frontPage/dispersion_1k.png)
 
-*High-resolution render showcasing detailed spectral dispersion and caustic light patterns.*
+*Render showcasing spectral dispersion and caustic light patterns.*
 
 ![Advanced Dispersion](frontPage/dispersion_spheres_2.png)
 
-*Complex scene with multiple dispersive objects creating intricate rainbow patterns.*
+*Multiple glass spheres demonstrating various dispersion effects and light interactions.*
+
 
 ## Future Enhancements
 
