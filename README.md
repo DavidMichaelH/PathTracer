@@ -1,10 +1,10 @@
-# PathTracer - Advanced Ray Tracing Renderer
+# PathTracer - Ray Tracing Renderer
 
-A comprehensive C++ ray tracing engine featuring advanced geometry, spectral rendering, and professional-grade rendering capabilities. Supports complex meshes, procedural geometry, and chromatic dispersion effects.
+A C++ ray tracing engine featuring geometry rendering, spectral rendering, and mesh support. Includes procedural geometry generation and chromatic dispersion effects.
 
 ![Crystal Glasses](frontPage/crystal_glasses.png)
 
-*Beautiful crystal wine glasses showcasing advanced light refraction and realistic glass materials.*
+*Crystal wine glasses demonstrating light refraction and glass material rendering.*
 
 ## Overview
 
@@ -26,7 +26,7 @@ This renderer implements fundamental ray tracing concepts including:
   - Dielectric (glass/transparent materials with refraction)
 - **Anti-aliasing**: Multi-sample anti-aliasing (MSAA)
 - **Global illumination**: Physically-based light bouncing
-- **Spectral rendering**: Advanced chromatic dispersion effects
+- **Spectral rendering**: Chromatic dispersion effects
 
 ### Camera System
 - **Configurable field of view**
@@ -173,14 +173,14 @@ The default scene (`main.cpp:11-69`) renders:
 
 ![Dispersion Comparison](frontPage/srb_with_and_without_dis.png)
 
-*Side-by-side comparison showing regular glass (left) versus dispersive glass with chromatic effects (right).*
+*Comparison showing regular glass (left) versus dispersive glass with chromatic effects (right).*
 
 ### Performance Characteristics
 
 - **Computational Complexity**: O(n × pixels × samples × depth) where n is object count
 - **Memory Usage**: Minimal - scene data and stack depth for recursion
-- **Parallelization**: Multi-threaded rendering using OpenMP for optimal performance
-- **Acceleration**: Bounding Volume Hierarchy (BVH) for complex mesh scenes
+- **Parallelization**: Multi-threaded rendering using OpenMP
+- **Acceleration**: Bounding Volume Hierarchy (BVH) for mesh scenes
 
 ## File Structure
 
@@ -237,7 +237,7 @@ Potential improvements for this renderer:
 
 ### Performance
 - GPU acceleration (CUDA/OpenCL)
-- Advanced spatial acceleration (KD-tree, octree)
+- Additional spatial acceleration (KD-tree, octree)
 - Memory optimization for large scenes
 
 ### Features
@@ -245,7 +245,7 @@ Potential improvements for this renderer:
 - Area lights and soft shadows
 - Volumetric rendering and fog effects
 - Motion blur and temporal effects
-- Advanced materials (subsurface scattering, emission)
+- Additional materials (subsurface scattering, emission)
 - Environment mapping and HDRI backgrounds
 
 ### Output
