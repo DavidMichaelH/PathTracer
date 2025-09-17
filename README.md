@@ -173,7 +173,7 @@ The default scene (`main.cpp:11-69`) renders:
 
 ![Dispersion Comparison](frontPage/srb_with_and_without_dis.png)
 
-*Comparison showing regular glass (left) versus dispersive glass with chromatic effects (right).*
+*Comparison showing regular dielectric material (left) versus dispersive dielectric material with chromatic effects (right).*
  
 ## File Structure
 

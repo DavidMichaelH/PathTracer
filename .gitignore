@@ -64,3 +64,8 @@ Testing/Temporary/
 # Backup files
 *.bak
 *.backup
+
+# Tutorial and documentation files
+TUTORIAL.md
+CONCEPTS.md
+ALGORITHMS.md
