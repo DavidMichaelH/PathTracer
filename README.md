@@ -174,14 +174,7 @@ The default scene (`main.cpp:11-69`) renders:
 ![Dispersion Comparison](frontPage/srb_with_and_without_dis.png)
 
 *Comparison showing regular glass (left) versus dispersive glass with chromatic effects (right).*
-
-### Performance Characteristics
-
-- **Computational Complexity**: O(n × pixels × samples × depth) where n is object count
-- **Memory Usage**: Minimal - scene data and stack depth for recursion
-- **Parallelization**: Multi-threaded rendering using OpenMP
-- **Acceleration**: Bounding Volume Hierarchy (BVH) for mesh scenes
-
+ 
 ## File Structure
 
 ```
@@ -230,36 +223,10 @@ The default scene (`main.cpp:11-69`) renders:
 ![Advanced Dispersion](frontPage/dispersion_spheres_2.png)
 
 *Multiple glass spheres demonstrating various dispersion effects and light interactions.*
-
-
-## Future Enhancements
-
-Potential improvements for this renderer:
-
-### Performance
-- GPU acceleration (CUDA/OpenCL)
-- Additional spatial acceleration (KD-tree, octree)
-- Memory optimization for large scenes
-
-### Features
-- Texture mapping and UV coordinates
-- Area lights and soft shadows
-- Volumetric rendering and fog effects
-- Motion blur and temporal effects
-- Additional materials (subsurface scattering, emission)
-- Environment mapping and HDRI backgrounds
-
-### Output
-- Support for additional image formats (PNG, JPEG)
-- HDR output
-- Real-time preview
+ 
 
 ## Learning Resources
 
 This implementation closely follows:
 - ["Ray Tracing in One Weekend"](https://raytracing.github.io/books/RayTracingInOneWeekend.html) by Peter Shirley
 - Follow-up books: "Ray Tracing: The Next Week" and "Ray Tracing: The Rest of Your Life"
-
-## License
-
-[Specify your license here]
