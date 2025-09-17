@@ -26,10 +26,7 @@ This renderer implements fundamental ray tracing concepts including:
   - Dielectric (glass/transparent materials with refraction)
 - **Anti-aliasing**: Multi-sample anti-aliasing (MSAA)
 - **Global illumination**: Physically-based light bouncing
-
-![Spectral Dispersion](frontPage/glass_dispersion.png)
-
-*Advanced spectral rendering demonstrating chromatic dispersion effects in glass materials.*
+- **Spectral rendering**: Advanced chromatic dispersion effects
 
 ### Camera System
 - **Configurable field of view**
@@ -77,12 +74,19 @@ This renderer implements fundamental ray tracing concepts including:
 ## Build Instructions
 
 ### Prerequisites
-- CMake 3.10 or higher
-- C++20 compatible compiler (GCC, Clang, or MSVC)
+- CMake 3.12 or higher
+- C++17 compatible compiler (GCC, Clang, or MSVC)
+- OpenMP (for parallel rendering)
+  - **macOS**: `brew install libomp`
+  - **Ubuntu/Debian**: `sudo apt-get install libomp-dev`
+  - **Windows**: Usually included with Visual Studio
 
 ### Building
 
 ```bash
+# Navigate to SimpleRenderer directory
+cd SimpleRenderer
+
 # Configure build system
 cmake -B build
 
@@ -90,23 +94,27 @@ cmake -B build
 cmake --build build
 
 # For optimized release builds
-cmake --build build --config release
+cmake --build build --config Release
 ```
 
 ### Running
 
 ```bash
-# Run with scene selection
-./build/bin/PathTracer [scene] > output.ppm
+# Run main renderer with scene selection
+./build/PathTracer [scene] > output.ppm
 
 # Available scenes:
-./build/bin/PathTracer classic     # Classic ray tracing scene
-./build/bin/PathTracer diamond     # High-quality diamond showcase
-./build/bin/PathTracer geometry    # Geometry demonstration
-./build/bin/PathTracer dispersion  # Spectral dispersion effects
+./build/PathTracer classic     # Classic ray tracing scene
+./build/PathTracer diamond     # High-quality diamond showcase
+./build/PathTracer geometry    # Geometry demonstration
+./build/PathTracer dispersion  # Spectral dispersion effects
 
 # Show help
-./build/bin/PathTracer help
+./build/PathTracer help
+
+# Run individual scene executables
+./build/dispersion_test > dispersion_render.ppm
+./build/diamond_closeup > diamond_render.ppm
 ```
 
 The output is a PPM format image that can be viewed with image viewers supporting this format.
@@ -171,7 +179,8 @@ The default scene (`main.cpp:11-69`) renders:
 
 - **Computational Complexity**: O(n × pixels × samples × depth) where n is object count
 - **Memory Usage**: Minimal - scene data and stack depth for recursion
-- **Parallelization**: Easily parallelizable per-pixel (not implemented in this version)
+- **Parallelization**: Multi-threaded rendering using OpenMP for optimal performance
+- **Acceleration**: Bounding Volume Hierarchy (BVH) for complex mesh scenes
 
 ## File Structure
 
@@ -227,17 +236,17 @@ The default scene (`main.cpp:11-69`) renders:
 Potential improvements for this renderer:
 
 ### Performance
-- Multi-threading support
 - GPU acceleration (CUDA/OpenCL)
-- Spatial acceleration structures (BVH, KD-tree)
+- Advanced spatial acceleration (KD-tree, octree)
+- Memory optimization for large scenes
 
 ### Features
-- Additional primitives (triangles, planes, boxes)
-- Texture mapping
+- Texture mapping and UV coordinates
 - Area lights and soft shadows
-- Volumetric rendering
-- Motion blur
+- Volumetric rendering and fog effects
+- Motion blur and temporal effects
 - Advanced materials (subsurface scattering, emission)
+- Environment mapping and HDRI backgrounds
 
 ### Output
 - Support for additional image formats (PNG, JPEG)
