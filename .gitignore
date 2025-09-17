@@ -10,11 +10,13 @@ benchmark_performance
 test_optimizations
 dispersion_test_optimized
 
-# Render outputs
+# Render outputs (exclude frontPage showcase images)
 *.ppm
-*.png
-*.jpg
-*.jpeg
+SimpleRenderer/*.png
+SimpleRenderer/*.jpg
+SimpleRenderer/*.jpeg
+build_output/
+**/build_output/
 
 # macOS
 .DS_Store
